@@ -1,30 +1,23 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { InquiryForm } from "@/components/InquiryForm";
+export const metadata: Metadata = { title: "Arrangements" };
 
-export const metadata: Metadata = { title: "Order" };
-
-export default function ArrangementsPage() {
+export default function Page() {
   return (
-    <div className="wrap">
-      <aside className="side">
-        <strong><Link href="/">Stem &amp; Soil</Link></strong>
-        <p>Delivery inside the ring before noon.</p>
-      </aside>
-      <main className="main">
-        <div className="pad">
-          <h1>Order a wrap</h1>
-          <InquiryForm
-            submitLabel="Request flowers"
-            fields={[
-              { name: "name", label: "Name" },
-              { name: "phone", label: "Phone", type: "tel" },
-              { name: "piece", label: "Piece", type: "select", options: ["Market wrap", "Table low", "Hand-tied"] },
-              { name: "note", label: "Colour or note", type: "textarea" },
-            ]}
-          />
-        </div>
-      </main>
-    </div>
+    <article className="sheet">
+      <p className="eyebrow">{"Order"}</p>
+      <h1>{"Three shapes we make every week."}</h1>
+      <p className="lede">{"Tell us the occasion and a colour you do not want. We do not copy a photo stem for stem."}</p>
+      
+      
+      <div className="stack">
+<div className="row"><b>{"Market wrap"}</b><span>{"€28"}</span></div>
+<div className="row"><b>{"Hand-tied"}</b><span>{"€42"}</span></div>
+<div className="row"><b>{"Table low"}</b><span>{"€55"}</span></div>
+<div className="row"><b>{"Larger bowl"}</b><span>{"From €85"}</span></div>
+</div>
+      
+      <InquiryForm submitLabel={"Request flowers"} fields={[{"name":"name","label":"Name"},{"name":"phone","label":"Phone","type":"tel"},{"name":"piece","label":"Piece","type":"select","options":["Market wrap","Table low","Hand-tied"]},{"name":"note","label":"Colour or note","type":"textarea"}]} />
+    </article>
   );
 }
